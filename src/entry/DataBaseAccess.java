@@ -12,7 +12,6 @@ public class DataBaseAccess {
     }
 
     public static Set<String> Add(String entry) {
-//        Set<String> set =new HashSet<String>();
         set.add(entry);
         return set;
     }
