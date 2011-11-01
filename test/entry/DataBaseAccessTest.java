@@ -11,6 +11,7 @@ public class DataBaseAccessTest {
     @Test
     public void SearchResultTest() {
         String input = "java.lang";
+        DataBaseAccess.Add(input);
         assertTrue(DataBaseAccess.SearchResult(input));
     }
 
