@@ -7,9 +7,9 @@ import org.junit.Test;
 public class DataBaseAccessTest {
 
     @Test
-    public void CheckOnDBTest() {
+    public void SearchResultTest() {
         String input = "java.lang";
-        assertTrue(DataBaseAccess.CheckOnDB(input));
+        assertTrue(DataBaseAccess.SearchResult(input));
     }
 
 }

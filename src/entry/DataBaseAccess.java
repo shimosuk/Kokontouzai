@@ -2,7 +2,7 @@ package entry;
 
 public class DataBaseAccess {
 
-    public static boolean CheckOnDB(String input) {
-        return false;
+    public static boolean SearchResult(String input) {
+        return input.equals("java.lang");
     }
 }
