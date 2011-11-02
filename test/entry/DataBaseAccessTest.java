@@ -11,22 +11,25 @@ public class DataBaseAccessTest {
     @Test
     public void SearchResultTest() {
         String input = "java.lang";
-        DataBaseAccess.Add(input);
-        assertTrue(DataBaseAccess.SearchResult(input));
+        DataBaseAccess searchtest = new DataBaseAccess();
+        searchtest.Add(input);
+        assertTrue(searchtest.SearchResult(input));
     }
 
     @Test
     public void AddTest() {
         String entry="entry";
-        Set<String> set = DataBaseAccess.Add(entry);
-        assertEquals(1 ,set.size());
-        assertTrue(DataBaseAccess.Add(entry).contains(entry));
-
         String entry2="entry2";
-        set = DataBaseAccess.Add(entry2);
+        DataBaseAccess addtest = new DataBaseAccess();
+
+        Set<String> set = addtest.Add(entry);
+        assertEquals(1 ,set.size());
+        assertTrue(addtest.Add(entry).contains(entry));
+
+        set = addtest.Add(entry2);
         assertEquals(2, set.size());
-        assertTrue(DataBaseAccess.Add(entry2).contains(entry2));
-        assertTrue(DataBaseAccess.Add(entry).contains(entry));
+        assertTrue(addtest.Add(entry2).contains(entry2));
+        assertTrue(addtest.Add(entry).contains(entry));
     }
 
 }
