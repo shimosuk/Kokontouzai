@@ -14,22 +14,36 @@ public class DataBaseAccessTest {
         DataBaseAccess searchtest = new DataBaseAccess();
         searchtest.Add(input);
         assertTrue(searchtest.SearchResult(input));
+        assertFalse(searchtest.SearchResult("notFound"));
     }
 
     @Test
-    public void AddTest() {
+    public void DBAddTest() {
         String entry="entry";
         String entry2="entry2";
         DataBaseAccess addtest = new DataBaseAccess();
 
         Set<String> set = addtest.Add(entry);
         assertEquals(1 ,set.size());
-        assertTrue(addtest.Add(entry).contains(entry));
+        assertTrue(set.contains(entry));
 
         set = addtest.Add(entry2);
         assertEquals(2, set.size());
-        assertTrue(addtest.Add(entry2).contains(entry2));
-        assertTrue(addtest.Add(entry).contains(entry));
+        assertTrue(set.contains(entry2));
+        assertTrue(set.contains(entry));
+    }
+
+    @Test
+    public void EntryMultipleTest(){
+        DataBaseAccess multiple = new DataBaseAccess();
+        String[] entrys = {"entry1", "entry2"};
+
+        Set<String> set;
+        for(String entry:entrys)
+            set = multiple.Add(entry);
+        set = multiple.Add(entrys[0]);
+
+        assertEquals(2,set.size());
     }
 
 }
