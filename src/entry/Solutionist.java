@@ -3,10 +3,10 @@ package entry;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DataBaseAccess {
+public class Solutionist {
 
     private static Set<String> set;
-    public DataBaseAccess(){
+    public Solutionist(){
         set = new HashSet<String>();
     }
     public boolean SearchResult(String input) {

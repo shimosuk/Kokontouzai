@@ -11,7 +11,7 @@ public class DataBaseAccessTest {
     @Test
     public void SearchResultTest() {
         String input = "java.lang";
-        DataBaseAccess searchtest = new DataBaseAccess();
+        Solutionist searchtest = new Solutionist();
         searchtest.Add(input);
         assertTrue(searchtest.SearchResult(input));
         assertFalse(searchtest.SearchResult("notFound"));
@@ -21,7 +21,7 @@ public class DataBaseAccessTest {
     public void DBAddTest() {
         String entry="entry";
         String entry2="entry2";
-        DataBaseAccess addtest = new DataBaseAccess();
+        Solutionist addtest = new Solutionist();
 
         Set<String> set = addtest.Add(entry);
         assertEquals(1 ,set.size());
@@ -35,7 +35,7 @@ public class DataBaseAccessTest {
 
     @Test
     public void EntryMultipleTest(){
-        DataBaseAccess multiple = new DataBaseAccess();
+        Solutionist multiple = new Solutionist();
         String[] entrys = {"entry1", "entry2"};
 
         Set<String> set;
