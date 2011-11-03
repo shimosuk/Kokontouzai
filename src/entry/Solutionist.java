@@ -5,16 +5,16 @@ import java.util.Set;
 
 public class Solutionist {
 
-    private static Set<String> set;
+    private static Set<String> model_answers;
     public Solutionist(){
-        set = new HashSet<String>();
+        model_answers = new HashSet<String>();
     }
-    public boolean SearchResult(String input) {
-        return set.contains(input);
+    public boolean isTheRight(String answer) {
+        return model_answers.contains(answer);
     }
 
-    public Set<String> Add(String entry) {
-        set.add(entry);
-        return set;
+    public Set<String> addModelAnswer(String new_model_answer) {
+        model_answers.add(new_model_answer);
+        return model_answers;
     }
 }

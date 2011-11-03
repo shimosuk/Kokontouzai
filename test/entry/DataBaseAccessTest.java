@@ -13,8 +13,8 @@ public class DataBaseAccessTest {
         String input = "java.lang";
         Solutionist searchtest = new Solutionist();
         searchtest.Add(input);
-        assertTrue(searchtest.SearchResult(input));
-        assertFalse(searchtest.SearchResult("notFound"));
+        assertTrue(searchtest.isTheRight(input));
+        assertFalse(searchtest.isTheRight("notFound"));
     }
 
     @Test
