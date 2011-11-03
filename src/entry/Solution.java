@@ -3,10 +3,10 @@ package entry;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Solutionist {
+public class Solution {
 
     private static Set<String> model_answers;
-    public Solutionist(){
+    public Solution(){
         model_answers = new HashSet<String>();
     }
     public boolean isTheRight(String answer) {
