@@ -2,6 +2,8 @@ package entry;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Test;
@@ -19,31 +21,44 @@ public class SolutionTest {
 
     @Test
     public void addNewModelAnswerTest() {
-        String new_model_answer1="nma1";
-        String new_model_answer2="nma2";
+        String newModelAnswer1="nma1";
+        String newModelAnswer2="nma2";
         Solution solution = new Solution();
 
-        Set<String> new_model_answers = solution.addModelAnswer(new_model_answer1);
-        assertEquals(1 ,new_model_answers.size());
-        assertTrue(new_model_answers.contains(new_model_answer1));
+        Set<String> newModelAnswers = solution.addModelAnswer(newModelAnswer1);
+        assertEquals(1 ,newModelAnswers.size());
+        assertTrue(newModelAnswers.contains(newModelAnswer1));
 
-        new_model_answers = solution.addModelAnswer(new_model_answer2);
-        assertEquals(2, new_model_answers.size());
-        assertTrue(new_model_answers.contains(new_model_answer2));
-        assertTrue(new_model_answers.contains(new_model_answer1));
+        newModelAnswers = solution.addModelAnswer(newModelAnswer2);
+        assertEquals(2, newModelAnswers.size());
+        assertTrue(newModelAnswers.contains(newModelAnswer2));
+        assertTrue(newModelAnswers.contains(newModelAnswer1));
     }
 
     @Test
     public void addNewModelMultipleCaseTest(){
         Solution solution = new Solution();
-        String[] add_model_answer = {"entry1", "entry2"};
+        String[] addModelAnswer = {"entry1", "entry2"};
 
-        Set<String> add_multiple_answer;
-        for(String answer:add_model_answer)
-            add_multiple_answer = solution.addModelAnswer(answer);
-        add_multiple_answer = solution.addModelAnswer(add_model_answer[0]);
+        Set<String> addMultipleAnswer;
+        for(String answer:addModelAnswer)
+            addMultipleAnswer = solution.addModelAnswer(answer);
+        addMultipleAnswer = solution.addModelAnswer(addModelAnswer[0]);
 
-        assertEquals(2,add_multiple_answer.size());
+        assertEquals(2,addMultipleAnswer.size());
     }
 
+    @Test
+    public void addNewModelAnswersTest() {
+        Solution solution = new Solution();
+        List<String> newModels = new ArrayList<String>();
+        newModels.add("Integer");
+        newModels.add("String");
+        newModels.add("Boolean");
+        solution.addModelAnswers(newModels);
+
+        assertTrue(solution.isTheRight("String"));
+        assertTrue(solution.isTheRight("Integer"));
+        assertFalse(solution.isTheRight("List"));
+    }
 }

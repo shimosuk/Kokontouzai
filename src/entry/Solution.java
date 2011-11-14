@@ -1,20 +1,27 @@
 package entry;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Solution {
 
-    private static Set<String> model_answers;
+    private Set<String> modelAnswers;
     public Solution(){
-        model_answers = new HashSet<String>();
-    }
-    public boolean isTheRight(String answer) {
-        return model_answers.contains(answer);
+        modelAnswers = new HashSet<String>();
     }
 
-    public Set<String> addModelAnswer(String new_model_answer) {
-        model_answers.add(new_model_answer);
-        return model_answers;
+    public boolean isTheRight(String answer) {
+        return modelAnswers.contains(answer);
+    }
+
+    public void addModelAnswers(List<String> newModelAnswers) {
+        for(String newModelAnswer : newModelAnswers)
+            addModelAnswer(newModelAnswer);
+    }
+
+    public Set<String> addModelAnswer(String newModelAnswer) {
+        modelAnswers.add(newModelAnswer);
+        return modelAnswers;
     }
 }
