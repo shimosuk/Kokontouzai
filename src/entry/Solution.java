@@ -11,6 +11,10 @@ public class Solution {
         modelAnswers = new HashSet<String>();
     }
 
+    public Solution(Set<String> themeAnswers) {
+        modelAnswers = themeAnswers;
+    }
+
     public boolean isTheRight(String answer) {
         return modelAnswers.contains(answer);
     }

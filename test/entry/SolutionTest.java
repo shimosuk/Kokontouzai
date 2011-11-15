@@ -8,7 +8,16 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import theme.JavaLang;
+
 public class SolutionTest {
+
+    @Test
+    public void testThemeSelect() {
+        Solution solution = new Solution(JavaLang.getInstance().javaLang);
+        assertTrue(solution.isTheRight("Integer"));
+        assertFalse(solution.isTheRight("List"));
+    }
 
     @Test
     public void resultOfSolutionTest() {

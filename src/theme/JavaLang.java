@@ -6,7 +6,7 @@ import java.util.Set;
 public class JavaLang {
 
     private static final JavaLang instance = new JavaLang();
-    private Set<String> javaLang;
+    public Set<String> javaLang;
 
     private JavaLang() {
         javaLang = new HashSet<String>();
