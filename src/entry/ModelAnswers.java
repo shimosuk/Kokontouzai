@@ -4,18 +4,18 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Solution {
+public class ModelAnswers {
 
     private Set<String> modelAnswers;
-    public Solution(){
+    public ModelAnswers(){
         modelAnswers = new HashSet<String>();
     }
 
-    public Solution(Set<String> themeAnswers) {
+    public ModelAnswers(Set<String> themeAnswers) {
         modelAnswers = themeAnswers;
     }
 
-    public boolean isTheRight(String answer) {
+    public boolean isTheSame(String answer) {
         return modelAnswers.contains(answer);
     }
 
