@@ -1,7 +1,6 @@
 package entry;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class ModelAnswers {
@@ -19,9 +18,8 @@ public class ModelAnswers {
         return modelAnswers.contains(answer);
     }
 
-    public void addModelAnswers(List<String> newModelAnswers) {
-        for(String newModelAnswer : newModelAnswers)
-            addModelAnswer(newModelAnswer);
+    public void addModelAnswers(Set<String> newModelAnswers) {
+        modelAnswers = newModelAnswers;
     }
 
     public Set<String> addModelAnswer(String newModelAnswer) {

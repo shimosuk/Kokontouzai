@@ -2,12 +2,10 @@ package entry;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Test;
-
 import theme.JavaLang;
 
 public class ModelAnswersTest {
@@ -57,7 +55,7 @@ public class ModelAnswersTest {
     @Test
     public void addNewModelAnswersTest() {
         ModelAnswers modelAnswers = new ModelAnswers();
-        List<String> newModels = new ArrayList<String>();
+        Set<String> newModels = new HashSet<String>();
         newModels.add("Integer");
         newModels.add("String");
         newModels.add("Boolean");
