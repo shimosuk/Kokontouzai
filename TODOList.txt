@@ -3,7 +3,6 @@ Kokontouzai
 
 [Doing]
 
-一度判定された答えが再び判定されないこと
 
 [TODO]
 
@@ -20,3 +19,4 @@ Kokontouzai
 [Done]
 
 入力answerの正答チェック
+一度判定された答えが再び判定されないこと

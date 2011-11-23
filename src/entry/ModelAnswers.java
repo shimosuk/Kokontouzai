@@ -9,7 +9,7 @@ import theme.JavaLang;
 public class ModelAnswers {
 
     private Set<String> modelAnswers = JavaLang.getInstance().javaLang;
-    private List<String> checkedAnswers = new ArrayList<String>();
+    private List<String> alreadyAnsweredLists = new ArrayList<String>();
 
     public ModelAnswers(){
     }
@@ -19,9 +19,9 @@ public class ModelAnswers {
     }
 
     private Boolean avoidTheRepetitionOf(String answer) {
-        Boolean notRepeat = !checkedAnswers.contains(answer);
-        if (notRepeat)
-            checkedAnswers.add(answer);
-        return notRepeat;
+        Boolean notRepeatAnswered = !alreadyAnsweredLists.contains(answer);
+        if (notRepeatAnswered)
+            alreadyAnsweredLists.add(answer);
+        return notRepeatAnswered;
     }
 }

@@ -19,5 +19,4 @@ public class ModelAnswersTest {
         assertTrue(modelAnswers.isTheSame("Integer"));
         assertFalse(modelAnswers.isTheSame("List"));
     }
-
 }
