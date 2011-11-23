@@ -11,6 +11,13 @@ import theme.JavaLang;
 public class ModelAnswersTest {
 
     @Test
+    public void testJudgeForOnce() {
+        ModelAnswers modelAnswers = new ModelAnswers(JavaLang.getInstance().javaLang);
+        assertTrue(modelAnswers.isTheSame("Integer"));
+        assertFalse(modelAnswers.isTheSame("Integer"));
+    }
+
+    @Test
     public void testThemeSelect() {
         ModelAnswers modelAnswers = new ModelAnswers(JavaLang.getInstance().javaLang);
         assertTrue(modelAnswers.isTheSame("Integer"));

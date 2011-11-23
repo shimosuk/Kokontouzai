@@ -18,6 +18,10 @@ public class ModelAnswers {
         return modelAnswers.contains(answer);
     }
 
+    private String JudgeForOnce(String answer) {
+        return answer;
+    }
+
     public void addModelAnswers(Set<String> newModelAnswers) {
         modelAnswers = newModelAnswers;
     }
