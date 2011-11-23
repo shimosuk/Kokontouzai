@@ -15,16 +15,13 @@ public class ModelAnswers {
     }
 
     public boolean isTheSame(String answer) {
-        if (modelAnswers.contains(answer))
-            return avoidTheRepetitionOf(answer);
-        return false;
+        return modelAnswers.contains(answer) && avoidTheRepetitionOf(answer);
     }
 
     private Boolean avoidTheRepetitionOf(String answer) {
-        if (!checkedAnswers.contains(answer)) {
+        Boolean notRepeat = !checkedAnswers.contains(answer);
+        if (notRepeat)
             checkedAnswers.add(answer);
-            return true;
-        }
-        return !checkedAnswers.contains(answer);
+        return notRepeat;
     }
 }
