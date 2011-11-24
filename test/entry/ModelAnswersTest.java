@@ -19,4 +19,12 @@ public class ModelAnswersTest {
         assertTrue(modelAnswers.isTheSame("Integer"));
         assertFalse(modelAnswers.isTheSame("List"));
     }
+
+    @Test
+    public void testReadAnsweredList() {
+        ModelAnswers modelAnswers = new ModelAnswers();
+        modelAnswers.isTheSame("Integer");
+        modelAnswers.isTheSame("String");
+        assertEquals(2, (int)modelAnswers.isAll());
+    }
 }

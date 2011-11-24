@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import theme.JavaLang;
-
+//TODO MadelAnswers を GamePlayer に変更
 public class ModelAnswers {
 
     private Set<String> modelAnswers = JavaLang.getInstance().javaLang;
@@ -14,6 +14,7 @@ public class ModelAnswers {
     public ModelAnswers(){
     }
 
+    //TODO isSafeAtに変更
     public boolean isTheSame(String answer) {
         return modelAnswers.contains(answer) && avoidTheRepetitionOf(answer);
     }
@@ -23,5 +24,9 @@ public class ModelAnswers {
         if (notRepeatAnswered)
             alreadyAnsweredLists.add(answer);
         return notRepeatAnswered;
+    }
+
+    public Integer isAll() {
+        return alreadyAnsweredLists.size();
     }
 }
