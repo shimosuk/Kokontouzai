@@ -4,25 +4,25 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class ModelAnswersTest {
+public class GamePlayerTest {
 
     @Test
     public void testJudgeForOnce() {
-        ModelAnswers modelAnswers = new ModelAnswers();
+        GamePlayer modelAnswers = new GamePlayer();
         assertTrue(modelAnswers.isTheSame("Integer"));
         assertFalse(modelAnswers.isTheSame("Integer"));
     }
 
     @Test //TODO 名前変更（正しい答え、correctAnswerかどうかを判断するような名前）
     public void testCheckInputAnswer() {
-        ModelAnswers modelAnswers = new ModelAnswers();
+        GamePlayer modelAnswers = new GamePlayer();
         assertTrue(modelAnswers.isTheSame("Integer"));
         assertFalse(modelAnswers.isTheSame("List"));
     }
 
     @Test
     public void testReadAnsweredList() {
-        ModelAnswers modelAnswers = new ModelAnswers();
+        GamePlayer modelAnswers = new GamePlayer();
         modelAnswers.isTheSame("Integer");
         modelAnswers.isTheSame("String");
         assertEquals(2, (int)modelAnswers.isAll());

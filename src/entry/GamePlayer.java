@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.Set;
 
 import theme.JavaLang;
-//TODO MadelAnswers を GamePlayer に変更
-public class ModelAnswers {
+
+public class GamePlayer {
 
     private Set<String> modelAnswers = JavaLang.getInstance().javaLang;
     private List<String> alreadyAnsweredLists = new ArrayList<String>();
 
-    public ModelAnswers(){
+    public GamePlayer(){
     }
 
     //TODO isRightに変更
