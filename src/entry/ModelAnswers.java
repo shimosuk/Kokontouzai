@@ -14,15 +14,14 @@ public class ModelAnswers {
     public ModelAnswers(){
     }
 
-    //TODO isSafeAtに変更
+    //TODO isRightに変更
     public boolean isTheSame(String answer) {
-        return modelAnswers.contains(answer) && avoidTheRepetitionOf(answer);
+        return avoidTheRepetitionOf(answer) && modelAnswers.contains(answer);
     }
 
     private Boolean avoidTheRepetitionOf(String answer) {
         Boolean notRepeatAnswered = !alreadyAnsweredLists.contains(answer);
-        if (notRepeatAnswered)
-            alreadyAnsweredLists.add(answer);
+        alreadyAnsweredLists.add(answer);
         return notRepeatAnswered;
     }
 

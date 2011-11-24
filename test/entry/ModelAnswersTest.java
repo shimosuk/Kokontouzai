@@ -13,7 +13,7 @@ public class ModelAnswersTest {
         assertFalse(modelAnswers.isTheSame("Integer"));
     }
 
-    @Test
+    @Test //TODO 名前変更（正しい答え、correctAnswerかどうかを判断するような名前）
     public void testCheckInputAnswer() {
         ModelAnswers modelAnswers = new ModelAnswers();
         assertTrue(modelAnswers.isTheSame("Integer"));
@@ -26,5 +26,9 @@ public class ModelAnswersTest {
         modelAnswers.isTheSame("Integer");
         modelAnswers.isTheSame("String");
         assertEquals(2, (int)modelAnswers.isAll());
+
+        modelAnswers.isTheSame("Integer");
+        modelAnswers.isTheSame("List");
+        assertEquals(4, (int)modelAnswers.isAll());
     }
 }
