@@ -15,7 +15,7 @@ public class GamePlayer {
     }
 
     //TODO: booleanからBooleanへ！オートボクシングが無駄に働いている
-    public boolean say(String answer) {
+    public Boolean say(String answer) {
         return neverSaid(answer) && modelAnswers.contains(answer);
     }
 
