@@ -31,4 +31,18 @@ public class GamePlayerTest {
         player.say("List");
         assertEquals(4, (int)player.allRecord());
     }
+
+    @Test
+    public void outAnswerCount() {
+        GamePlayer player = new GamePlayer();
+        player.say("Set");
+        player.say("List");
+        assertEquals(2, (int)player.outCount());
+
+        player.say("Integer");
+        assertEquals(2, (int)player.outCount());
+
+        player.say("Integer");
+        assertEquals(3, (int)player.outCount());
+    }
 }

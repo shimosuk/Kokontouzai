@@ -10,13 +10,18 @@ public class GamePlayer {
 
     private Set<String> modelAnswers = JavaLang.getInstance().javaLang;
     private List<String> saveTheAnsweredRecord = new ArrayList<String>();
+    private Boolean judgeAnswer;
+    private Integer outCount;
 
     public GamePlayer(){
+        outCount = 0;
     }
 
-    //TODO: booleanからBooleanへ！オートボクシングが無駄に働いている
     public Boolean say(String answer) {
-        return neverSaid(answer) && modelAnswers.contains(answer);
+        if (!(judgeAnswer = neverSaid(answer) && modelAnswers.contains(answer))) {
+            outCount++;
+        }
+        return judgeAnswer;
     }
 
     private Boolean neverSaid(String answer) {
@@ -27,5 +32,9 @@ public class GamePlayer {
 
     public Integer allRecord() {
         return saveTheAnsweredRecord.size();
+    }
+
+    public Integer outCount() {
+        return outCount;
     }
 }

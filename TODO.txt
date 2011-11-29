@@ -3,7 +3,6 @@ Kokontouzai
 
 [Doing]
 
-アウト回数の保持
 
 [TODO]
 
@@ -18,6 +17,7 @@ Kokontouzai
 
 [Done]
 
+アウト回数の保持
 入力answerの正答チェック
 一度判定された答えが再び判定されないこと
 回答済みリストの表示
