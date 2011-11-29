@@ -7,28 +7,28 @@ import org.junit.Test;
 public class GamePlayerTest {
 
     @Test
-    public void testJudgeForOnce() {
-        GamePlayer modelAnswers = new GamePlayer();
-        assertTrue(modelAnswers.isTheSame("Integer"));
-        assertFalse(modelAnswers.isTheSame("Integer"));
-    }
-
-    @Test //TODO 名前変更（正しい答え、correctAnswerかどうかを判断するような名前）
-    public void testCheckInputAnswer() {
-        GamePlayer modelAnswers = new GamePlayer();
-        assertTrue(modelAnswers.isTheSame("Integer"));
-        assertFalse(modelAnswers.isTheSame("List"));
+    public void judgeForOnce() {
+        GamePlayer player = new GamePlayer();
+        assertTrue(player.say("Integer"));
+        assertFalse(player.say("Integer"));
     }
 
     @Test
-    public void testReadAnsweredList() {
-        GamePlayer modelAnswers = new GamePlayer();
-        modelAnswers.isTheSame("Integer");
-        modelAnswers.isTheSame("String");
-        assertEquals(2, (int)modelAnswers.isAll());
+    public void matchUpToCorrectAnswer() {
+        GamePlayer player = new GamePlayer();
+        assertTrue(player.say("Integer"));
+        assertFalse(player.say("List"));
+    }
 
-        modelAnswers.isTheSame("Integer");
-        modelAnswers.isTheSame("List");
-        assertEquals(4, (int)modelAnswers.isAll());
+    @Test
+    public void recrodInAllAnswer() {
+        GamePlayer player = new GamePlayer();
+        player.say("Integer");
+        player.say("String");
+        assertEquals(2, (int)player.allRecord());
+
+        player.say("Integer");
+        player.say("List");
+        assertEquals(4, (int)player.allRecord());
     }
 }

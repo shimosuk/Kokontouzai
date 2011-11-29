@@ -9,23 +9,23 @@ import theme.JavaLang;
 public class GamePlayer {
 
     private Set<String> modelAnswers = JavaLang.getInstance().javaLang;
-    private List<String> alreadyAnsweredLists = new ArrayList<String>();
+    private List<String> saveTheAnsweredRecord = new ArrayList<String>();
 
     public GamePlayer(){
     }
 
-    //TODO isRightに変更
-    public boolean isTheSame(String answer) {
-        return avoidTheRepetitionOf(answer) && modelAnswers.contains(answer);
+    //TODO: booleanからBooleanへ！オートボクシングが無駄に働いている
+    public boolean say(String answer) {
+        return neverSaid(answer) && modelAnswers.contains(answer);
     }
 
-    private Boolean avoidTheRepetitionOf(String answer) {
-        Boolean notRepeatAnswered = !alreadyAnsweredLists.contains(answer);
-        alreadyAnsweredLists.add(answer);
-        return notRepeatAnswered;
+    private Boolean neverSaid(String answer) {
+        Boolean notRecrodContains = !saveTheAnsweredRecord.contains(answer);
+        saveTheAnsweredRecord.add(answer);
+        return notRecrodContains;
     }
 
-    public Integer isAll() {
-        return alreadyAnsweredLists.size();
+    public Integer allRecord() {
+        return saveTheAnsweredRecord.size();
     }
 }
